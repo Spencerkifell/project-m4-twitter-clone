@@ -12,7 +12,7 @@ import { COLORS } from "../../constants";
 
 export const Sidebar = () => {
   return (
-    <StyledSidebar className="border-r-2">
+    <StyledSidebar className="bg-neutral-50">
         <Logo/>
         <>
             <NavigationLink to="/">
@@ -38,25 +38,26 @@ export const Sidebar = () => {
 
 const StyledSidebar = styled.div`
     display: flex;
-    height: 100vh;
     padding: 2vw;
     flex-direction: column;
     align-items: left;
     justify-content: left;
+    position: sticky;
     
     a {
         color: black;
-        font-size: 20px;
-        padding: 5px 10px;
+        font-size: 1rem;
         margin: 10px 0;
         text-decoration: none;
         font-weight: bold;
+        padding: 5px;
     }
 
     a:hover {
         color: ${COLORS.primary};
         background-color: ${COLORS.background};
         border-radius: 100px;
+        padding: 5px;
     }
     
 `;

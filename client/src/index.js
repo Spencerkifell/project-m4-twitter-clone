@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './App';
+import { CurrentUserProvider } from './components/CurrentUserContext';
 import './index.css'
-import { CurrentUserProvider } from './components/CurrentUser/CurrentUserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

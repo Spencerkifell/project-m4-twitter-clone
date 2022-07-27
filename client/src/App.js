@@ -8,7 +8,7 @@ import { Notifications } from './components/Notifications/Notifications';
 import { Profile } from './components/Profile/Profile';
 import { TweetDetails } from './components/TweetDetails/TweetDetails';
 import { Sidebar } from './components/Sidebar/Sidebar';
-import { CurrentUserContext } from './components/CurrentUser/CurrentUserContext';
+import { CurrentUserContext } from './components/CurrentUserContext';
 
 export const App = () => {
   const { status, currentUser } = React.useContext(CurrentUserContext);
