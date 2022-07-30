@@ -12,23 +12,23 @@ import { COLORS } from "../../constants";
 
 export const Sidebar = () => {
   return (
-    <StyledSidebar className="bg-neutral-50">
+    <StyledSidebar className="p-14 h-full border-x-2">
         <Logo/>
         <>
             <NavigationLink to="/">
-                <Icon icon={home} size={25} className="pr-3"/>
+                <Icon icon={home} size={35} className="pr-3"/>
                 Home
             </NavigationLink>
             <NavigationLink to="/profile/abc">
-                <Icon icon={user} size={25} className="pr-3"/>
+                <Icon icon={user} size={35} className="pr-3"/>
                 Profile
             </NavigationLink>  
             <NavigationLink to="/notifications">
-                <Icon icon={bell} size={25} className="pr-3"/>
+                <Icon icon={bell} size={35} className="pr-3"/>
                 Notifications
             </NavigationLink>
             <NavigationLink to="/bookmarks">
-                <Icon icon={bookmark} size={25} className="pr-3"/>
+                <Icon icon={bookmark} size={35} className="pr-3"/>
                 Bookmarks
             </NavigationLink>
         </>
@@ -38,11 +38,9 @@ export const Sidebar = () => {
 
 const StyledSidebar = styled.div`
     display: flex;
-    padding: 2vw;
     flex-direction: column;
     align-items: left;
     justify-content: left;
-    position: sticky;
     
     a {
         color: black;

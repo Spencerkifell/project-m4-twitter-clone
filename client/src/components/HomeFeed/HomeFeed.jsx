@@ -1,5 +1,6 @@
 import React from 'react'
-import { Tweet } from '../Tweet/Tweet';
+
+import { TweetFeed } from '../Tweet/TweetFeed/TweetFeed';
 import { TweetProvider } from '../TweetContext';
 
 export const HomeFeed = () => {
@@ -23,7 +24,7 @@ export const HomeFeed = () => {
                 tweetIds.map((id) => {
                     let tweet = tweets[id];
                     return (
-                        <div key={tweet.id}>
+                        <div key={tweet.id} className="h-auto border-b-2">
                             <TweetProvider
                                 handle={tweet.author.handle}
                                 displayName={tweet.author.displayName}
@@ -37,7 +38,7 @@ export const HomeFeed = () => {
                                 status={tweet.status}
                                 timestamp={tweet.timestamp}
                             >
-                                <Tweet/> 
+                                <TweetFeed/> 
                             </TweetProvider>
                         </div>
                     );
