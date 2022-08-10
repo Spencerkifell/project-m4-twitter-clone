@@ -1,9 +1,9 @@
 import React from 'react'
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom'
-import { Header } from '../Header';
+import { Header } from '../Utils/Header';
 import { TweetContext } from '../../TweetContext';
-import { Avatar } from '../Avatar';
+import { Avatar } from '../Utils/Avatar';
 import { ActionBar } from '../TweetAction/ActionBar';
 
 export const TweetFeed = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from "moment";
-import { Avatar } from '../Avatar';
-import { Header } from '../Header';
+import { Avatar } from '../Utils/Avatar';
+import { Header } from '../Utils/Header';
 import { TweetContext } from '../../TweetContext';
 import { ActionBar } from '../TweetAction/ActionBar';
 
@@ -21,10 +21,10 @@ export const TweetDetails = () => {
     } = React.useContext(TweetContext);
 
     return (
-        <div className="flex-col align-middle justify-center p-9 pb-0 border-b-2">
-            <div className="flex flex-row align-middle ml-3 mb-5 w-6/7">
+        <div className="flex-col align-middle justify-center p-9 pb-0 pt-5 border-b-2">
+            <div className="flex flex-row align-middle mb-5">
                 <Avatar avatarSrc={avatarSrc}/>
-                <Header 
+                <Header
                     displayName={displayName} 
                     handle={handle} 
                     timestamp={timestamp}
