@@ -1,5 +1,4 @@
 import React from "react";
-import moment from "moment";
 
 export const TweetContext = React.createContext(null);
 
@@ -30,7 +29,7 @@ export const TweetProvider = ({
         numLikes: numLikes,
         numRetweets: numRetweets,
         status: status,
-        timestamp: moment(timestamp).format("MMM Do")
+        timestamp: timestamp
     }}>
       {children}
     </TweetContext.Provider>

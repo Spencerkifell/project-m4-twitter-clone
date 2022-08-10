@@ -48,14 +48,14 @@ const StyledSidebar = styled.div`
         margin: 10px 0;
         text-decoration: none;
         font-weight: bold;
-        padding: 5px;
+        padding: 7px;
     }
 
     a:hover {
         color: ${COLORS.primary};
         background-color: ${COLORS.background};
         border-radius: 100px;
-        padding: 5px;
+        padding: 7px;
     }
     
 `;

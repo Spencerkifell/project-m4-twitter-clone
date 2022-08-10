@@ -7,7 +7,7 @@ import { HomeFeed } from './components/HomeFeed/HomeFeed';
 import { Notifications } from './components/Notifications/Notifications';
 import { Profile } from './components/Profile/Profile';
 import { Sidebar } from './components/Sidebar/Sidebar';
-import { TweetDetails } from './components/Tweet/TweetDetails/TweetDetails';
+import { Tweet } from './components/Tweet/Tweet';
 import { CurrentUserContext } from './components/CurrentUserContext';
 
 export const App = () => {
@@ -15,27 +15,27 @@ export const App = () => {
 
   return (
     <>
-      <div className='grid grid-cols-6 grid-rows-1'>
+      <div className='grid grid-cols-9 grid-rows-1'>
         <GlobalStyles />
         { status === 'idle' ? (
         <Router>
           <div/>
-          <div>
+          <div className='col-span-2'>
             <Sidebar/>
           </div>
-          <div className='col-span-3 border-r-2 min-h-screen h-full'>
+          <div className='col-span-5 border-r-2 min-h-screen h-full'>
             <Routes>
               <Route path='/' element={<HomeFeed/>} />
               <Route path="/notifications" element={<Notifications/>} />
               <Route path="/bookmarks" element={<Bookmarks/>} />
-              <Route path="/tweet/:id" element={<TweetDetails/>} />
+              <Route path="/tweet/:id" element={<Tweet/>} />
               <Route path="/profile/:profileId" element={<Profile/>} />
             </Routes>
           </div>
           <div/>
         </Router>
         ) : (
-          <p>Loading...</p>
+          <p className='col-span-9 text-center'>Loading...</p>
         )}
       </div>
     </>

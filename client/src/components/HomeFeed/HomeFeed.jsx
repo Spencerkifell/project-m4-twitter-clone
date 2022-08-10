@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { TweetFeed } from '../Tweet/TweetFeed/TweetFeed';
 import { TweetProvider } from '../TweetContext';
 
@@ -15,6 +14,7 @@ export const HomeFeed = () => {
                 setTweets(data.tweetsById);
             })
     }, [false]);
+
 
     return (
         <div>
