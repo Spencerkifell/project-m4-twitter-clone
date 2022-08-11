@@ -23,13 +23,13 @@ export const TweetFeed = () => {
         timestamp
     } = React.useContext(TweetContext);
 
-    function handleClick(id) {
+    const handleTweetClick = (id) =>{
         history(`/tweet/${id}`);
     }
 
     return (
             <div className="flex-col align-middle justify-center">
-                <div onClick={() => handleClick(id)} className="flex flex-row p-9 pb-2">
+                <div onClick={() => handleTweetClick(id)} className="flex flex-row p-9 pb-2">
                     <Avatar avatarSrc={avatarSrc}/>
                     <div className='align-middle ml-3 w-6/7'>
                         <Header displayName={displayName} handle={handle} timestamp={moment(timestamp).format("MMM Do")}/>
