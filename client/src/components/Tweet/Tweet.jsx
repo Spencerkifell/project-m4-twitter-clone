@@ -1,9 +1,11 @@
 import React from 'react'
+import Icon from 'react-icons-kit';
+
 import { useParams, useNavigate } from 'react-router-dom';
 import { TweetDetails } from './TweetDetails/TweetDetails';
 import { TweetProvider } from '../TweetContext';
-import {androidArrowBack} from 'react-icons-kit/ionicons/androidArrowBack'
-import Icon from 'react-icons-kit';
+import { Spinner } from '../Utils/Spinner';
+import { androidArrowBack } from 'react-icons-kit/ionicons/androidArrowBack'
 
 export const Tweet = () => {
     const { id } = useParams();
@@ -32,7 +34,7 @@ export const Tweet = () => {
             </div>
             <div>
                 {tweet == null ? (
-                    <p>Loading Tweet</p>
+                    <Spinner/>
                 ) : (
                     <div>
                         <TweetProvider

@@ -1,6 +1,8 @@
 import React from 'react'
+
 import { TweetFeed } from '../Tweet/TweetFeed/TweetFeed';
 import { TweetProvider } from '../TweetContext';
+import { Spinner } from '../Utils/Spinner';
 
 export const HomeFeed = () => {
     const [tweetIds, setTweetIds] = React.useState(null);
@@ -15,11 +17,10 @@ export const HomeFeed = () => {
             })
     }, [false]);
 
-
     return (
         <div>
-            {tweetIds == null ? (
-                <p>Loading Tweets</p>
+            { tweetIds == null ? (
+                <Spinner/>
             ) : (
                 tweetIds.map((id) => {
                     let tweet = tweets[id];

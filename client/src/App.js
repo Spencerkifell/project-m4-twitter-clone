@@ -1,7 +1,9 @@
 import React from 'react';
 import GlobalStyles from './components/GlobalStyles';
+import { COLORS } from './constants';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Oval } from 'react-loader-spinner';
 import { Bookmarks } from './components/Bookmarks/Bookmarks';
 import { HomeFeed } from './components/HomeFeed/HomeFeed';
 import { Notifications } from './components/Notifications/Notifications';
@@ -15,9 +17,9 @@ export const App = () => {
 
   return (
     <>
+    { status === 'idle' ? (
       <div className='grid grid-cols-9 grid-rows-1'>
         <GlobalStyles />
-        { status === 'idle' ? (
         <Router>
           <div/>
           <div className='col-span-2'>
@@ -29,15 +31,25 @@ export const App = () => {
               <Route path="/notifications" element={<Notifications/>} />
               <Route path="/bookmarks" element={<Bookmarks/>} />
               <Route path="/tweet/:id" element={<Tweet/>} />
-              <Route path="/profile/:profileId" element={<Profile/>} />
+              <Route path="/:profileId" element={<Profile/>} />
             </Routes>
           </div>
           <div/>
         </Router>
-        ) : (
-          <p className='col-span-9 text-center'>Loading...</p>
-        )}
       </div>
+    ) : (
+        <div className='flex justify-center h-screen items-center'>
+          <Oval 
+            height={100} 
+            width={100} 
+            strokeWidth={3}
+            strokeWidthSecondary={5}
+            color={COLORS.primary} 
+            secondaryColor='#616366' 
+            ariaLabel='Loading...' 
+          />
+        </div>
+    )}
     </>
   )
 };
