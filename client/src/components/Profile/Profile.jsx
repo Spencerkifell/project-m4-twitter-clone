@@ -1,6 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../Utils/Spinner';
+import { ProfileHeader } from './ProfileHeader';
+
 
 export const Profile = () => {
     const { profileId } = useParams();
@@ -11,16 +13,28 @@ export const Profile = () => {
             .then((response) => response.json())
             .then((data) => {
                 setCurrentProfile(data.profile);
+                console.log(data.profile)
             });
     }, [profileId]);
+
+    // handle
+    // displayName
+    // bio
+    // location
+    // joined
+    // numFollowing
+    // numFollowers
+    // bannerSrc
+    // avatarSrc 
 
     return (
         <>
             { currentProfile == null ? (
                 <Spinner/>
             ) : (
-                <p>Loaded</p>
+               <ProfileHeader currentProfile={currentProfile}/>
             )}
         </>
     )
 };
+
