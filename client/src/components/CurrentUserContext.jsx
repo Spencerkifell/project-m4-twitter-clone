@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 export const CurrentUserContext = React.createContext(null);
 
@@ -8,7 +7,8 @@ export const CurrentUserProvider = ({ children }) => {
     const [status, setStatus] = React.useState('loading');
 
     React.useEffect(() => {
-        axios.get("/api/me/profile")
+        fetch("/api/me/profile")
+            .then((response) => response.json())
             .then((data) => {
                 setCurrentUser(data.profile);
                 setStatus('idle');
@@ -16,7 +16,7 @@ export const CurrentUserProvider = ({ children }) => {
             .catch(() => {
                 setStatus('error');
             })
-    });
+    }, []);
 
     return (
         <CurrentUserContext.Provider value={{ currentUser, status }}>

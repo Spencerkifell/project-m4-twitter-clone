@@ -9,15 +9,18 @@ import { calendar } from 'react-icons-kit/entypo/calendar'
 
 export const ProfileHeader = (props) => {
     const { 
-        bannerSrc, 
-        avatarSrc, 
-        displayName, 
-        handle, 
-        bio, 
-        numFollowers, 
-        numFollowing, 
-        location, 
-        joined 
+        avatarSrc,
+        bannerSrc,
+        bio,
+        displayName,
+        handle,
+        isBeingFollowedByYou,
+        isFollowingYou,
+        joined,
+        location,
+        numFollowers,
+        numFollowing,
+        numLikes
     } = props.currentProfile
 
     return (
@@ -29,13 +32,18 @@ export const ProfileHeader = (props) => {
                         <img src={avatarSrc} alt="avatar" className="rounded-full"/>
                     }
                 </Avatar>
-                <FollowButton>Follow</FollowButton>
+                <FollowButton>{ isBeingFollowedByYou ? "Following" : "Follow" }</FollowButton>
             </Header>
             <UserInfo>
-                <p className="text-xl font-bold">{ displayName }</p>
-                <p className='text-md text-slate-600 mb-2'>@{ handle }</p>
-                <p className='mb-2'>{ bio }</p>
-                <div className='flex flex-row mb-2'>
+                <p className="text-xl font-bold items-center align-middle">{ displayName }</p>
+                <div className="flex flex-row items-center mb-2">
+                    <p className='text-md text-slate-600 mr-1'>@{ handle }</p>
+                    { isFollowingYou && 
+                        <p className='text-sm bg-slate-300 text-slate-600 rounded-md px-1'>Follows you</p>
+                    }
+                </div>
+                <p className='mb-1'>{ bio }</p>
+                <div className='flex flex-row mb-1'>
                     { location != null &&
                         <>
                             <Icon icon={pin} size={18} className="mr-2"/> 

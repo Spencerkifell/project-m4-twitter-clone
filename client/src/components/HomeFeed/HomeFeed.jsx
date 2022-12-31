@@ -15,7 +15,7 @@ export const HomeFeed = () => {
                 setTweetIds(data.tweetIds);
                 setTweets(data.tweetsById);
             })
-    }, [false]);
+    }, []);
 
     return (
         <div>

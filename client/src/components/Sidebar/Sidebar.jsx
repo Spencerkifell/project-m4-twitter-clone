@@ -10,7 +10,7 @@ import { bookmark } from 'react-icons-kit/feather/bookmark'
 import { Icon } from "react-icons-kit";
 import { COLORS } from "../../constants";
 
-export const Sidebar = () => {
+export const Sidebar = ( {currentUser} ) => {
   return (
     <StyledSidebar className="p-14 h-full border-x-2">
         <Logo/>
@@ -19,7 +19,7 @@ export const Sidebar = () => {
                 <Icon icon={home} size={35} className="pr-3"/>
                 Home
             </NavigationLink>
-            <NavigationLink to="/profile/abc">
+            <NavigationLink to={`/${currentUser.handle}`}>
                 <Icon icon={user} size={35} className="pr-3"/>
                 Profile
             </NavigationLink>  

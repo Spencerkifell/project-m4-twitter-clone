@@ -23,7 +23,7 @@ export const App = () => {
         <Router>
           <div/>
           <div className='col-span-2'>
-            <Sidebar/>
+            <Sidebar currentUser={currentUser}/>
           </div>
           <div className='col-span-5 border-r-2 min-h-screen h-full'>
             <Routes>
